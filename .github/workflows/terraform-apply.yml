@@ -118,7 +118,7 @@ jobs:
     # --- Create S3 Backend Bucket if it doesn't exist --- 
     - name: Create S3 Backend Bucket
       run: |
-        BUCKET_NAME="tf-state-${{ env.USER }}-brevity"
+        BUCKET_NAME="tf-state-${{ env.USER }}-brevity-test"
         # Check if bucket exists (aws s3 ls returns 0 if exists, non-zero otherwise)
         if aws s3 ls "s3://$BUCKET_NAME" --region ${{ env.AWS_REGION }} > /dev/null 2>&1; then
           echo "S3 bucket s3://$BUCKET_NAME already exists."
