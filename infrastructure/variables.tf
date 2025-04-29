@@ -19,7 +19,7 @@ variable "user" {
 variable "github_repository_url" {
   description = "URL of the GitHub repository for Amplify connection (e.g., https://github.com/your-user/your-repo)"
   type        = string
-  default     = "https://github.com/The-Brevity-Cloud/term-project-team4-brevitycloud" # Defaulted to your repo
+  default     = "https://github.com/RagaLG/term-project-team4-brevitycloud-main" # Defaulted to your repo
 }
 
 variable "github_pat_secret_name" {
