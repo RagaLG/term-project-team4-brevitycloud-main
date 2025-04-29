@@ -89,7 +89,7 @@ jobs:
     # --- Create S3 Backend Bucket if it doesn't exist (for init) --- 
     - name: Create S3 Backend Bucket if Missing
       run: |
-        BUCKET_NAME="tf-state-${{ env.USER }}-brevity"
+        BUCKET_NAME="tf-state-${{ env.USER }}-brevity-test"
         if aws s3 ls "s3://$BUCKET_NAME" --region ${{ env.AWS_REGION }} > /dev/null 2>&1; then
           echo "S3 bucket s3://$BUCKET_NAME exists."
         else
@@ -157,7 +157,7 @@ jobs:
       working-directory: infrastructure
       run: |
         # Reverted to using user-specific bucket name in backend config
-        terraform init -backend-config="bucket=tf-state-${{ env.USER }}-brevity" \
+        terraform init -backend-config="bucket=tf-state-${{ env.USER }}-brevity-test" \
                         -backend-config="key=${{ env.USER }}/terraform.tfstate" \
                         -backend-config="region=us-east-1"
         # User variable is now sourced from terraform.tfvars
